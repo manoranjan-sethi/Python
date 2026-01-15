@@ -50,7 +50,7 @@ print(f"Unique List->{uniqueList}")
 Map -> eliminates the loop from the function
     -> helps in type casting answer in desired data types
     -> used while calling the function
-    
+    -> will map every value or object
     syntax-> data-type(map(function_name,iterable)) 
 """
 list1=[1,2,3,3,4,4,78,78,5]
@@ -80,4 +80,53 @@ print(oddEvenMap(6)) #primitive
 
 #syntax-> data-type(map(function_name,iterable)) -> Non-primitive
 print(list(map(oddEvenMap,list1)))
+
+# 3. Accept one list of strings and print the length of them in a list
+listStr=["apple","papaya","guava","kiwi"] 
+
+def length(a):
+    return len(a)
+
+print(len("ice"))
+
+print(list(map(len,listStr)))
+
+'''
+Filter -> works same as map
+       -> filter out only the values of true block
+'''
+
+def evenFilter(a):
+    if a%2==0:
+        return a
+
+print(list(filter(evenFilter,list1)))
+
+'''
+Reduce -> dont need to typecast the data type
+       -> minumum numbers of arguments should be 2 
+'''
+
+import functools # import is needed to use reduce function
+
+def reduceFn(a,b):
+    return a+b
+
+print(functools.reduce(reduceFn,list1))
+
+# Normal Sum
+def totalSum(a):
+    sum=0
+    for i in a:
+        sum+=i
+    return sum
+
+print(totalSum(list1))
+
+# 4. Factorial of a number
+
+def fact(a,b):
+    return a*b
+
+print(functools.reduce(fact,5))
 
